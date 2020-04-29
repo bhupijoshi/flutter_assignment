@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'customButton.dart';
+import 'customText.dart';
 // 1) Create a new Flutter App (in this project) and output an AppBar and some text
 // below it
 // 2) Add a button which changes the text (to any other text of your choice)
@@ -46,22 +48,13 @@ class MyAppState extends State<MyApp> {
               SizedBox(
                 height: 20,
               ),
-              RaisedButton(
-                onPressed: _updateTextForTextWidget,
-                child: Text('Clik Me'),
+              CustomButton(
+                clickHandler: _updateTextForTextWidget,
               ),
               SizedBox(
                 height: 20,
               ),
-              Text(
-                _aList[_index],
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
+              CustomText(textForWidget: _aList[_index])
             ],
           ),
         ),
